@@ -4,7 +4,7 @@ MAINTAINER Elton Renda "https://github.com/ej52"
 ENV NPM_VERSION=2
     
 RUN echo "http://dl-4.alpinelinux.org/alpine/v3.2/main" >> /etc/apk/repositories && \
-    apk add --update nodejs=0.12.9-r0 && \
+    apk add --update nodejs=0.12.10-r0 && \
     cd / && \
     npm install -g npm@${NPM_VERSION} && \
     mkdir /app && \
