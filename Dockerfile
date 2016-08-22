@@ -1,8 +1,8 @@
 FROM ej52/alpine-nginx
 MAINTAINER Elton Renda "https://github.com/ej52"
 
-ENV NODE_VERSION=v6.2.2 \
-    NPM_VERSION=3
+ENV NODE_VERSION=v0.12.15 \
+    NPM_VERSION=2
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/v3.2/main" >> /etc/apk/repositories && \
     apk add --update git curl make gcc g++ python linux-headers libgcc libstdc++ binutils-gold && \
