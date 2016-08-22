@@ -2,8 +2,8 @@ FROM ej52/alpine-nginx
 MAINTAINER Elton Renda "https://github.com/ej52"
 
 # ENV VERSION=v0.10.46 CFLAGS="-D__USE_MISC" NPM_VERSION=2
-# ENV VERSION=v0.12.15 NPM_VERSION=2
- ENV VERSION=v4.5.0 NPM_VERSION=2
+ ENV VERSION=v0.12.15 NPM_VERSION=2
+# ENV VERSION=v4.5.0 NPM_VERSION=2
 # ENV VERSION=v5.12.0 NPM_VERSION=3
 # ENV VERSION=v6.4.0 NPM_VERSION=3
 
@@ -43,4 +43,4 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libs
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
 
-WORKDIR /app
+WORKDIR /var/www
