@@ -7,9 +7,9 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.2/main" >> /etc/apk/repositories
     apk add --update nodejs=0.12.10-r0 && \
     cd / && \
     npm install -g npm@${NPM_VERSION} && \
-    mkdir /app && \
     npm install -g grunt-cli gulp nodemon && \
+    sed -i 's#/var/www#/var/www/build#g' /etc/nginx/conf.d/default.conf && \
     apk del gcc g++ linux-headers binutils-gold && \
     rm -rf /var/cache/apk/*
 
-WORKDIR /app
+WORKDIR /var/www
