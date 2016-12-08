@@ -11,8 +11,7 @@ ENV VERSION=v4.6.1 NPM_VERSION=2
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
     
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libstdc++ gnupg && \
+RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libstdc++ gnupg && \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
         9554F04D7259F04124DE6B476D5A82AC7E37093B \
         94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
