@@ -37,12 +37,11 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libs
     paxctl -cm /usr/bin/node && \
     cd / && \
     if [ -x /usr/bin/npm ]; then \
-    npm install -g npm@${NPM_VERSION} && \
+    npm install -g npm@${NPM_VERSION} grunt gulp && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
     fi && \
     apk del curl make gcc g++ python linux-headers paxctl gnupg ${DEL_PKGS} && \
     mkdir /app && \
-    npm install -g grunt-cli gulp && \
     sed -i 's#/var/www#/var/www/build#g' /etc/nginx/conf.d/default.conf && \
     rm -rf /etc/ssl /node-${VERSION}.tar.gz /SHASUMS256.txt.asc /node-${VERSION} ${RM_DIRS} \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
